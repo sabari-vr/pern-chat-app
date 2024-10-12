@@ -16,6 +16,12 @@ declare global {
   }
 }
 
+interface Token {
+  id: string;
+  token: string;
+  userId: string;
+}
+
 const protectedRoute = async (
   req: Request,
   res: Response,
@@ -54,7 +60,7 @@ const protectedRoute = async (
       },
     });
 
-    const tokenExists = activeTokens.some((t) => t.token === token);
+    const tokenExists = activeTokens.some((t: Token) => t.token === token);
 
     if (!tokenExists) {
       return res.status(401).json({ msg: "Token is not valid" });
