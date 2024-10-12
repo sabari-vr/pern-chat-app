@@ -5,3 +5,17 @@ type ConversationType = {
   fullName: string;
   profilePic: string;
 };
+
+interface ImportMetaEnv {
+  VITE_API_URL: string; // Example of adding a specific variable
+  // Add other environment variables as needed
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+
+declare module "*.mp3" {
+  const src: string;
+  export default src;
+}
