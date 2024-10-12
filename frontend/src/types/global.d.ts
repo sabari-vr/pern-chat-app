@@ -19,3 +19,9 @@ declare module "*.mp3" {
   const src: string;
   export default src;
 }
+
+declare module "react-dom/client" {
+  import { Root } from "react-dom";
+  export function createRoot(container: Element | DocumentFragment): Root;
+  // You may need to add other exports here if you're using them
+}
