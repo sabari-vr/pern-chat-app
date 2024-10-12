@@ -24,10 +24,12 @@ const AuthContext = createContext<{
   authUser: AuthUserType | null;
   setAuthUser: Dispatch<SetStateAction<AuthUserType | null>>;
   isLoading: boolean;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
 }>({
   authUser: null,
   setAuthUser: () => {},
   isLoading: true,
+  setIsLoading: () => {},
 });
 
 export const useAuthContext = () => {
@@ -60,6 +62,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         authUser,
         isLoading,
         setAuthUser,
+        setIsLoading,
       }}
     >
       {children}

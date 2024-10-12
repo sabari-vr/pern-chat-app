@@ -12,7 +12,7 @@ const useLogout = () => {
   const logout = async () => {
     setLoading(true);
     Axios.post("/auth/logout")
-      .then((res) => {
+      .then(() => {
         setAuthUser({
           user: {
             id: "",

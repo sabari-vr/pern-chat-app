@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext";
 
 function App() {
-  const { authUser, isLoading } = useAuthContext();
+  const { authUser } = useAuthContext();
 
   const isAutherized = !!authUser?.accessToken;
 
@@ -32,12 +32,3 @@ function App() {
 }
 
 export default App;
-
-const ProtectedPages = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  );
-};
