@@ -14,6 +14,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+const __dirname = path.resolve();
 
 if (process.env.NODE_ENV !== "development") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
