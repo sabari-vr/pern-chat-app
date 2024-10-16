@@ -1,7 +1,7 @@
 import cron from "cron";
 import https from "https";
 
-const URL = "https://pern-chat-app-880d.onrender.com/";
+const URL = "https://pern-chat-app-92f2.onrender.com";
 
 const job = new cron.CronJob("*/10 * * * *", function () {
   https
